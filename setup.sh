@@ -385,6 +385,14 @@ echo -e "└──────────────────────�
 sleep 1 
 wget -q https://raw.githubusercontent.com/arzvpn/Arzv/main/backup/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 
+#install UDP
+echo -e "┌─────────────────────────────────────────┐"
+echo -e " \E[41;1;39m            >>> Install UDP <<<           \E[0m$NC"
+echo -e "└─────────────────────────────────────────┘"
+sleep 1 
+wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1S3IE25v_fyUfCLslnujFBSBMNunDHDk2' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1S3IE25v_fyUfCLslnujFBSBMNunDHDk2" -O install-udp && rm -rf /tmp/cookies.txt && chmod +x install-udp && ./install-udp
+clear
+
 # // Download Data
 echo -e "${GREEN}Download Data${NC}"
 wget -q -O /usr/bin/usernew "https://raw.githubusercontent.com/arzvpn/Arzv/main/usernew.sh"
@@ -527,6 +535,7 @@ echo  "   - XRAY  Vless None TLS    : 80" | tee -a log-install.txt
 echo  "   - Trojan GRPC             : 443" | tee -a log-install.txt
 echo  "   - Trojan WS               : 443" | tee -a log-install.txt
 echo  "   - Sodosok WS/GRPC         : 443" | tee -a log-install.txt
+echo  "   - UDP SSH                 : 1-65535" | tee -a log-install.t
 echo  ""  | tee -a log-install.txt
 echo  "   >>> Server Information & Other Features"  | tee -a log-install.txt
 echo  "   - Timezone                : Asia/Jakarta (GMT +7)"  | tee -a log-install.txt
