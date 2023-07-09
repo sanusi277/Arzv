@@ -113,7 +113,7 @@ wget -q -O /usr/bin/menu-vmess "https://raw.githubusercontent.com/arzvpn/Arzv/ma
 wget -q -O /usr/bin/menu-ss "https://raw.githubusercontent.com/arzvpn/Arzv/main/menu/menu-ss.sh"
 wget -q -O /usr/bin/menu-trojan "https://raw.githubusercontent.com/arzvpn/Arzv/main/menu/menu-trojan.sh"
 wget -q -O /usr/bin/menu-ssh "https://raw.githubusercontent.com/arzvpn/Arzv/main/menu/menu-ssh.sh"
-wget -q -O /usr/bin/menu-backup "https://raw.githubusercontent.com/arzvpn/Arzv/main/menu/menu-backup.sh""
+wget -q -O /usr/bin/menu-backup "https://raw.githubusercontent.com/arzvpn/Arzv/main/menu/menu-backup.sh"
 wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/arzvpn/Arzv/main/menu/menu.sh"
 wget -q -O /usr/bin/webmin "https://raw.githubusercontent.com/arzvpn/Arzv/main/options/webmin.sh"
 wget -q -O /usr/bin/xp "https://raw.githubusercontent.com/arzvpn/Arzv/main/xp.sh"
