@@ -83,8 +83,8 @@ sleep 1
 echo ""
 # UPDATE RUN-UPDATE
 cd /usr/bin
-wget -O run-update "https://raw.githubusercontent.com/${GitUser}/Arzv/main/options/update.sh"
-chmod +x run-update
+wget -O update "https://raw.githubusercontent.com/${GitUser}/Arzv/main/options/update.sh"
+chmod +x update
 # RUN UPDATE
 echo ""
 clear
