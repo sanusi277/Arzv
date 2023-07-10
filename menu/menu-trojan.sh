@@ -124,7 +124,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
 		echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
         echo "     No  User   Expired"
         grep -E "^### " "/etc/xray/config.json" | cut -d ' ' -f 2-3 | nl -s ') '
-	until [[ ${CLIENT_NUMBER} -ge 0 && ${CLIENT_NUMBER} -le ${NUMBER_OF_CLIENTS} ]]; do
+	until [[ ${CLIENT_NUMBER} -ge 1 && ${CLIENT_NUMBER} -le ${NUMBER_OF_CLIENTS} ]]; do
                 if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
         echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
                         read -rp "Select one client [1]: " CLIENT_NUMBER
@@ -140,12 +140,12 @@ exp=$(grep -E "^### " "/etc/xray/config.json" | cut -d ' ' -f 3 | sed -n "${CLIE
 hariini=`date -d "0 days" +"%Y-%m-%d"`
 
 trojanlink1="trojan://${uuid}@${domain}:443?mode=gun&security=tls&type=grpc&serviceName=trojan-grpc&sni=bug.com#${user}"
-trojanlink="trojan://${uuid}@isi_bug_disini:443?path=%2Ftrojan-ws&security=tls&host=${domain}&type=ws&sni=${domain}#${user}"
+trojanlink="trojan://${uuid}@bug.com:443?path=%2Ftrojan-ws&security=tls&host=${domain}&type=ws&sni=${domain}#${user}"
 
 clear
 echo -e ""
 echo -e "$BIBlue══════XRAY/TROJAN══════${NC}"
-echo -e "\033[0;34m══════════════════════\033[0m"
+echo -e "\033[0;34m════════════════════\033[0m"
 echo -e "Remarks        : ${user}"
 echo -e "Host/IP        : ${domain}"
 echo -e "Expired On     : $exp"
@@ -154,11 +154,11 @@ echo -e "Port gRPC      : 443"
 echo -e "Key            : ${uuid}"
 echo -e "Path           : /trojan-ws"
 echo -e "ServiceName    : trojan-grpc"
-echo -e "\033[0;34m══════════════════════\033[0m"
-echo -e "Link TLS       : ${trojanlink}"
-echo -e "\033[0;34m══════════════════════\033[0m"
+echo -e "\033[0;34m════════════════════\033[0m"
+echo -e "Link WS       : ${trojanlink}"
+echo -e "\033[0;34m════════════════════\033[0m"
 echo -e "Link gRPC      : ${trojanlink1}"
-echo -e "\033[0;34m══════════════════════\033[0m"
+echo -e "\033[0;34m════════════════════\033[0m"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
 menu-trojan
@@ -177,10 +177,10 @@ sed -i '/#trojangrpc$/a\#! '"$user $exp"'\
 
 systemctl restart xray
 trojanlink1="trojan://${uuid}@${domain}:443?mode=gun&security=tls&type=grpc&serviceName=trojan-grpc&sni=bug.com#${user}"
-trojanlink="trojan://${uuid}@isi_bug_disini:443?path=%2Ftrojan-ws&security=tls&host=${domain}&type=ws&sni=${domain}#${user}"
+trojanlink="trojan://${uuid}@bug.com:443?path=%2Ftrojan-ws&security=tls&host=${domain}&type=ws&sni=${domain}#${user}"
 clear
 echo -e "$BIBlue══════XRAY/TROJAN══════${NC}"
-echo -e "\033[0;34m═══════════════════════\033[0m"
+echo -e "\033[0;34m═════════════════════\033[0m"
 echo -e "Remarks        : ${user}"
 echo -e "Host/IP        : ${domain}"
 echo -e "Port TLS       : 443"
@@ -188,13 +188,13 @@ echo -e "Port gRPC      : 443"
 echo -e "Key            : ${uuid}"
 echo -e "Path           : /trojan-ws"
 echo -e "ServiceName    : trojan-grpc"
-echo -e "\033[0;34m════════════════════════\033[0m"
-echo -e "Link TLS       : ${trojanlink}"
-echo -e "\033[0;34m════════════════════════\033[0m"
+echo -e "\033[0;34m══════════════════════\033[0m"
+echo -e "Link WS       : ${trojanlink}"
+echo -e "\033[0;34m══════════════════════\033[0m"
 echo -e "Link gRPC      : ${trojanlink1}"
-echo -e "\033[0;34m═════════════════════════\033[0m"
+echo -e "\033[0;34m═══════════════════════\033[0m"
 echo -e "Expired On     : $exp"
-echo -e "\033[0;34m═════════════════════════\033[0m"
+echo -e "\033[0;34m═══════════════════════\033[0m"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
 menu-trojan
@@ -342,9 +342,9 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
     fi
 }
 clear
-echo -e "┌─────────────────────────────────────────────────┐" | lolcat
-echo -e "│                    TROJAN MENU                  │" | lolcat
-echo -e "└─────────────────────────────────────────────────┘" | lolcat
+echo -e "┌───────────────────────────────────────────────┐" | lolcat
+echo -e "│                   TROJAN MENU                 │" | lolcat
+echo -e "└───────────────────────────────────────────────┘" | lolcat
 echo -e "┌───────────────────────────────────────────────┐" | lolcat
 echo -e "     ${BICyan}[${BIGreen}1${BICyan}]${BIGreen} Create Trojan Account ${NC}     "
 echo -e "     ${BICyan}[${BIGreen}2${BICyan}]${BIGreen} Trial Trojan Account  ${NC}    "
