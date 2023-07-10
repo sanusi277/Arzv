@@ -366,24 +366,28 @@ echo -e " \E[41;1;39m           >>> Install Source <<<        \E[0m$NC"
 echo -e "└─────────────────────────────────────────┘"
 sleep 1 
 wget -q https://raw.githubusercontent.com/arzvpn/Arzv/main/tools/arzsource.sh && chmod +x arzsource.sh && ./arzsource.sh
+clear
 #install ssh-vpn
 echo -e "┌─────────────────────────────────────────┐"
 echo -e " \E[41;1;39m          >>> Install SSH WS <<<        \E[0m$NC"
 echo -e "└─────────────────────────────────────────┘"
 sleep 1
 wget -q https://raw.githubusercontent.com/arzvpn/Arzv/main/tools/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
+clear
 #install ins-xray
 echo -e "┌─────────────────────────────────────────┐"
 echo -e " \E[41;1;39m            >>> Install Xray <<<         \E[0m$NC"
 echo -e "└─────────────────────────────────────────┘"
 sleep 1 
 wget -q https://raw.githubusercontent.com/arzvpn/Arzv/main/tools/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
+clear
 #install ins-xray
 echo -e "┌─────────────────────────────────────────┐"
 echo -e " \E[41;1;39m            >>> Install BR <<<           \E[0m$NC"
 echo -e "└─────────────────────────────────────────┘"
 sleep 1 
 wget -q https://raw.githubusercontent.com/arzvpn/Arzv/main/backup/set-br.sh && chmod +x set-br.sh && ./set-br.sh
+clear
 
 #install UDP
 echo -e "┌─────────────────────────────────────────┐"
@@ -535,7 +539,7 @@ echo  "   - XRAY  Vless None TLS    : 80" | tee -a log-install.txt
 echo  "   - Trojan GRPC             : 443" | tee -a log-install.txt
 echo  "   - Trojan WS               : 443" | tee -a log-install.txt
 echo  "   - Sodosok WS/GRPC         : 443" | tee -a log-install.txt
-echo  "   - UDP SSH                 : 1-65535" | tee -a log-install.t
+echo  "   - UDP CUSTOM              : 1-65535" | tee -a log-install.t
 echo  ""  | tee -a log-install.txt
 echo  "   >>> Server Information & Other Features"  | tee -a log-install.txt
 echo  "   - Timezone                : Asia/Jakarta (GMT +7)"  | tee -a log-install.txt
