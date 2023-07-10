@@ -112,6 +112,7 @@ IP=$(curl -sS ifconfig.me);
 ossl=`cat /root/log-install.txt | grep -w "OpenVPN" | cut -f2 -d: | awk '{print $6}'`
 opensh=`cat /root/log-install.txt | grep -w "OpenSSH" | cut -f2 -d: | awk '{print $1}'`
 db=`cat /root/log-install.txt | grep -w "Dropbear" | cut -f2 -d: | awk '{print $1,$2}'`
+udparz="$(cat /root/log-install.txt | grep -w "UDP CUSTOM" | cut -d: -f2)"
 ssl="$(cat ~/log-install.txt | grep -w "Stunnel5" | cut -d: -f2)"
 sqd="$(cat /root/log-install.txt | grep -w "Squid" | cut -d: -f2)"
 OhpSSH=`cat /root/log-install.txt | grep -w "OHP SSH" | cut -d: -f2 | awk '{print $1}'`
@@ -133,50 +134,52 @@ PID=`ps -ef |grep -v grep | grep sshws |awk '{print $2}'`
 
 if [[ ! -z "${PID}" ]]; then
 echo -e "${BIBlue}═════SSH ACCOUNTS═════${NC}"
-echo -e "${BIBlue}══════════════════════${NC}"
+echo -e "${BIBlue}════════════════════${NC}"
 echo -e "Username   : $Login" 
 echo -e "Password   : $Pass"
 echo -e "Expired On : $exp" 
-echo -e "${BIBlue}══════════════════════${NC}"
-echo -e "IP         : $IP" 
+echo -e "${BIBlue}════════════════════${NC}"
+echo -e "IP     : $IP" 
 echo -e "Host       : $domen" 
 echo -e "OpenSSH    : $opensh"
 echo -e "Dropbear   : $db" 
 echo -e "SSH-WS     : $portsshws" 
 echo -e "SSH WS SSL : $wsssl" 
 echo -e "SSL/TLS    : $ssl" 
+echo -e "UDP CUSTOM : $udparz"
 echo -e "UDPGW      : 7100-7300" 
-echo -e "${BIBlue}═════════════════════${NC}"
+echo -e "${BIBlue}════════════════════${NC}"
 echo -e "Payload WS"
 echo -e "GET / HTTP/1.1[crlf]Host: $domen[crlf]Connection: Keep-Alive[crlf]User-Agent: [ua][crlf]Upgrade: ws[crlf][crlf]"
-echo -e "${BIBlue}═════════════════════${NC}"
+echo -e "${BIBlue}════════════════════${NC}"
 echo -e "Payload WSS"
-echo -e "GET wss://[host] HTTP/1.1[crlf]Host: bug.com[crlf]Connection: Arz-Alive[crlf]User-Agent: [ua][crlf]Upgrade: ws[crlf][crlf]"
-echo -e "${BIBlue}═════════════════════${NC}"
+echo -e "GET wss://$domen HTTP/1.1[crlf]Host: bug.com[crlf]Connection: Arz-Alive[crlf]User-Agent: [ua][crlf]Upgrade: ws[crlf][crlf]"
+echo -e "${BIBlue}════════════════════${NC}"
 echo -e "${BICyan} Enjoy our Arz Auto Script Service${NC}" 
 else
 clear
 echo -e "${BIBlue}═════SSH ACCOUNTS═════${NC}"
-echo -e "${BIBlue}══════════════════════${NC}"
+echo -e "${BIBlue}════════════════════${NC}"
 echo -e "Username   : $Login" 
 echo -e "Password   : $Pass"
 echo -e "Expired On : $exp" 
-echo -e "${BIBlue}══════════════════════${NC}"
-echo -e "IP         : $IP" 
+echo -e "${BIBlue}════════════════════${NC}"
+echo -e "IP     : $IP" 
 echo -e "Host       : $domen" 
 echo -e "OpenSSH    : $opensh"
 echo -e "Dropbear   : $db" 
 echo -e "SSH-WS     : $portsshws" 
 echo -e "SSH WS SSL : $wsssl" 
 echo -e "SSL/TLS    : $ssl" 
+echo -e "UDP CUSTOM : $udparz"
 echo -e "UDPGW      : 7100-7300" 
-echo -e "${BIBlue}═════════════════════${NC}"
+echo -e "${BIBlue}════════════════════${NC}"
 echo -e "Payload WS"
 echo -e "GET / HTTP/1.1[crlf]Host: $domen[crlf]Connection: Keep-Alive[crlf]User-Agent: [ua][crlf]Upgrade: ws[crlf][crlf]"
-echo -e "${BIBlue}═════════════════════${NC}"
+echo -e "${BIBlue}════════════════════${NC}"
 echo -e "Payload WSS"
-echo -e "GET wss://[host] HTTP/1.1[crlf]Host: bug.com[crlf]Connection: Arz-Alive[crlf]User-Agent: [ua][crlf]Upgrade: ws[crlf][crlf]"
-echo -e "${BIBlue}═════════════════════${NC}"
+echo -e "GET wss://$domen HTTP/1.1[crlf]Host: bug.com[crlf]Connection: Arz-Alive[crlf]User-Agent: [ua][crlf]Upgrade: ws[crlf][crlf]"
+echo -e "${BIBlue}════════════════════${NC}"
 echo -e "${BICyan} Enjoy our Arz Auto Script Service${NC}" 
 fi
 echo ""
@@ -516,6 +519,24 @@ case $AutoKill in
                 echo -e "======================================"
                 service cron reload >/dev/null 2>&1
                 service cron restart >/dev/null 2>&1
+                ;;
+		5)
+                echo -e ""
+                sleep 1
+                clear
+                echo > /etc/cron.d/tendang
+                echo "# Autokill" >/etc/cron.d/tendang
+                echo "*/1 * * * *  root /usr/bin/tendang $max" >>/etc/cron.d/tendang && chmod +x /etc/cron.d/tendang
+                echo "" > /root/log-limit.txt
+                echo -e ""
+                echo -e "======================================"
+                echo -e ""
+                echo -e "      Allowed MultiLogin : $max"
+                echo -e "      AutoKill Every     : 1 Minutes"      
+                echo -e ""
+                echo -e "======================================"
+                service cron reload >/dev/null 2>&1
+                service cron restart >/dev/null 2>&1                                                                 
                 ;;
                 x)
                 menu
