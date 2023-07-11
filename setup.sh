@@ -1,4 +1,3 @@
-
 #!/bin/bash
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 
@@ -112,6 +111,7 @@ mkdir -p /etc/xray
 
 echo -e "${tyblue} Welcome To Arz AutoScript......${NC} "
 sleep 2
+echo -e " >>>Owner Arz Vpn Store<<<"  | lolcat
 echo -e "[ ${green}INFO${NC} ] Preparing the install file"
 apt install git curl -y >/dev/null 2>&1
 echo -e "[ ${green}INFO${NC} ] installation file is ready"
