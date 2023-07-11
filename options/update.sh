@@ -40,12 +40,15 @@ echo ""
 echo -e "   \e[$line--------------------------------------------------------\e[m"
 echo -e "   \e[$back_text                 \e[30m[\e[$box CHECK NEW UPDATE\e[30m ]                   \e[m"
 echo -e "   \e[$line--------------------------------------------------------\e[m"
+echo -e "   ┌─────────────────────────────────────────────────────┐" | lolcat
+echo -e "   │                      MENU UPDATE                    │" | lolcat
+echo -e "   └─────────────────────────────────────────────────────┘" | lolcat
 echo -e "   \e[$below VVERSION NOW >> $Info1"
 echo -e "   \e[$below SSTATUS UPDATE >> $sts"
 echo -e ""
-echo -e "       \e[1;31mWould you like to proceed?\e[0m"
+echo -e "   ======================================= " | lolcat   
 echo ""
-echo -e "            \e[0;32m[ Select Option ]\033[0m"
+echo -e ""
 echo -e "     \e[$number [1]\e[m \e[$below CCheck Script Update Now\e[m"
 echo -e "     \e[$number [x]\e[m \e[$below BBack To Menu\e[m"
 echo -e ""
@@ -59,6 +62,8 @@ new_version=$( curl https://raw.githubusercontent.com/${GitUser}/Arzv/main/newve
 if [ $version = $new_version ]; then
 clear
 echo ""
+echo -e "Script Arz Vpn Store" | lolcat
+sleep 1
 echo -e "\e[1;31mChecking New Version, Please Wait...!\e[m"
 sleep 3
 clear
@@ -72,6 +77,8 @@ sleep 2
 update
 fi
 clear
+echo -e "Script Arz Vpn Store" | lolcat
+sleep 1
 echo -e "\e[1;31mUpdate Available Now..\e[m"
 echo -e ""
 sleep 2
@@ -81,7 +88,7 @@ clear
 echo -e "\e[0;32mGetting New Version Script..\e[0m"
 sleep 1
 echo ""
-# UPDATE RUN-UPDATE
+# UPDATE RUN-UPDATE-Arz
 cd /usr/bin
 wget -O update "https://raw.githubusercontent.com/${GitUser}/Arzv/main/options/update.sh"
 chmod +x update
@@ -153,6 +160,7 @@ chmod +x /usr/bin/infoserv
 chmod +x /usr/bin/menu-set
 chmod +x /usr/bin/about
 clear
+
 echo -e ""
 echo -e "\e[0;32mDownloaded successfully!\e[0m"
 echo ""
@@ -164,15 +172,15 @@ sleep 2
 echo -e "\e[0;32mPatching... OK!\e[0m"
 sleep 1
 echo ""
-echo -e "\e[0;32mSucces Update Script For New Version\e[0m"
+echo -e "\e[0;32mSucces Update Script Arz For New Version\e[0m"
 cd
 echo "$ver" > /home/ver
 rm -f update.sh
 clear
 echo ""
-echo -e "\033[0;34m----------------------------------------\033[0m"
-echo -e "\E[44;1;39m            SCRIPT UPDATED              \E[0m"
-echo -e "\033[0;34m----------------------------------------\033[0m"
+echo -e "------------------------------------------" | lolcat
+echo -e "          Done Update Script Arz          " | lolcat
+echo -e "------------------------------------------" | lolcat
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
