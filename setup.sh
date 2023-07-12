@@ -361,40 +361,32 @@ else
 fi
 
 #install arzsource
-echo -e "┌─────────────────────────────────────────┐"
+echo -e "┌─────────────────────────────────────────┐" | lolcat
 echo -e " \E[41;1;39m           >>> Install Source <<<        \E[0m$NC"
-echo -e "└─────────────────────────────────────────┘"
+echo -e "└─────────────────────────────────────────┘" | lolcat
 sleep 1 
 wget -q https://raw.githubusercontent.com/arzvpn/Arzv/main/tools/arzsource.sh && chmod +x arzsource.sh && ./arzsource.sh
 clear
 #install ssh-vpn
-echo -e "┌─────────────────────────────────────────┐"
+echo -e "┌─────────────────────────────────────────┐" | lolcat
 echo -e " \E[41;1;39m          >>> Install SSH WS <<<        \E[0m$NC"
-echo -e "└─────────────────────────────────────────┘"
+echo -e "└─────────────────────────────────────────┘" | lolcat
 sleep 1
 wget -q https://raw.githubusercontent.com/arzvpn/Arzv/main/tools/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
 clear
 #install ins-xray
-echo -e "┌─────────────────────────────────────────┐"
+echo -e "┌─────────────────────────────────────────┐" | lolcat
 echo -e " \E[41;1;39m            >>> Install Xray <<<         \E[0m$NC"
-echo -e "└─────────────────────────────────────────┘"
+echo -e "└─────────────────────────────────────────┘" | lolcat
 sleep 1 
 wget -q https://raw.githubusercontent.com/arzvpn/Arzv/main/tools/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
 clear
 #install ins-xray
-echo -e "┌─────────────────────────────────────────┐"
+echo -e "┌─────────────────────────────────────────┐" | lolcat
 echo -e " \E[41;1;39m            >>> Install BR <<<           \E[0m$NC"
-echo -e "└─────────────────────────────────────────┘"
+echo -e "└─────────────────────────────────────────┘" | lolcat
 sleep 1 
 wget -q https://raw.githubusercontent.com/arzvpn/Arzv/main/backup/set-br.sh && chmod +x set-br.sh && ./set-br.sh
-clear
-
-#install UDP
-echo -e "┌─────────────────────────────────────────┐"
-echo -e " \E[41;1;39m            >>> Install UDP <<<           \E[0m$NC"
-echo -e "└─────────────────────────────────────────┘"
-sleep 1 
-wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1S3IE25v_fyUfCLslnujFBSBMNunDHDk2' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1S3IE25v_fyUfCLslnujFBSBMNunDHDk2" -O install-udp && rm -rf /tmp/cookies.txt && chmod +x install-udp && ./install-udp
 clear
 
 # // Download Data
@@ -520,9 +512,9 @@ gg="AM"
 fi
 curl -sS ifconfig.me > /etc/myipvps
 echo  " "
-echo "=====================-[ Arz Vpn Store ]-===================="
+echo "=====================-[ Arz Vpn Store ]-====================" | lolcat
 echo  ""
-echo  "------------------------------------------------------------"
+echo  "------------------------------------------------------------" | lolcat
 echo  ""
 echo  "   >>> Service & Port"  | tee -a log-install.txt
 echo  "   - OpenSSH                 : 22"  | tee -a log-install.txt
@@ -558,9 +550,9 @@ echo  "   - Restore Data" | tee -a log-install.txt
 echo  "   - Full Orders For Various Services" | tee -a log-install.txt
 echo ""
 echo  ""
-echo  "------------------------------------------------------------"
+echo  "------------------------------------------------------------" | lolcat
 echo  ""
-echo  "================-[ Script Xray Arz Vpn V2 ]-================"
+echo  "================-[ Script Xray Arz Vpn V2 ]-================" | lolcat
 echo -e ""
 echo  ""
 echo  "" | tee -a log-install.txt
@@ -572,11 +564,8 @@ rm -fr /root/ins-xray.sh
 rm -fr /root/setup.sh
 rm -fr /root/domain
 history -c
+sleep 3
+echo -e " INSTALL UDP CUSTOM" | lolcat
+wget -q https://raw.githubusercontent.com/arzvpn/Arzv/main/upudparz.sh && chmod +x upudparz.sh && ./upudparz.sh
 
-echo -ne "[ ${yell}WARNING${NC} ] Apakah Anda Ingin Reboot Sekarang ? (y/n)? "
-read answer
-if [ "$answer" == "${answer#[Yy]}" ] ;then
-exit 0
-else
-reboot
 fi
