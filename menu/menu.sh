@@ -217,7 +217,7 @@ datediff() {
 }
 mai="datediff "$Exp" "$DATE""
 echo -e "   ┌─────────────────────────────────────┐" | lolcat
-echo -e "   │  Version       : $(cat /opt/.ver) Last Version " | lolcat
+echo -e "   │  Version       : $(cat /home/ver) Last Version " | lolcat
 echo -e "   │  User          : $Name " | lolcat
 if [ $exp \< 1000 ];
 then
