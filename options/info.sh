@@ -141,7 +141,7 @@ echo -e "\033[1;96m  Contact WA   : 083117634078 \e[0m"
 echo -e "\033[1;96m  Telegram     : t.me/Store_Arz \e[0m"
 echo -e "\033[1;96m  Official     : t.me/arzvpn \e[0m"
 echo -e "\033[1;96m  Type Script  : Multiport V2 \e[0m"
-echo -e "\033[1;96m  Version SC   : $(cat /opt/.ver) \e[0m"
+echo -e "\033[1;96m  Version SC   : $(cat /home/ver) \e[0m"
 echo -e "\033[1;96m  Client Name  : $Name \e[0m"
 if [ $Exp \< 1000 ];
 then
