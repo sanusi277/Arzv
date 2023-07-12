@@ -152,7 +152,7 @@ fi;
 echo -e "┌──────────────────────────────────────────┐" | lolcat
 echo -e "│           SERVER PORT INFORMATION        │" | lolcat      
 echo -e "└──────────────────────────────────────────┘" | lolcat
-echo -e "\033[1;93m  >Port SSH Websocket       :80\e[0m"
+echo -e "\033[1;93m  >Port SSH Websocket       :80,2082\e[0m"
 echo -e "\033[1;93m  >Port SSH Websocket SSL   :443\e[0m"
 echo -e "\033[1;93m  >Port SSH SSL             :447,777\e[0m"
 echo -e "\033[1;93m  >Port OpenSSH             :22\e[0m"
