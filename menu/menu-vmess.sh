@@ -209,7 +209,7 @@ echo -e "Network       : ws"
 echo -e "Path          : /vmess" 
 echo -e "Path          : /worryfree" 
 echo -e "Path          : http://bug/worryfree" 
-echo -e "Path          : /kuota-habis" 
+echo -e "Path          : /v2ray" 
 echo -e "ServiceName   : vmess-grpc" 
 echo -e "\033[0;34m══════════════════════${NC}"
 echo -e "Link TLS : "
@@ -236,6 +236,11 @@ exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#vmess$/a\### '"$user $exp"'\
 },{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$user""'"' /etc/xray/config.json
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
+sed -i '/#vmessworry$/a\### '"$user $exp"'\
+},{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$user""'"' /etc/xray/config.json
+sed -i '/#vmesskuota$/a\### '"$user $exp"'\
+},{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$user""'"' /etc/xray/config.json
+sed -i '/#vmessgrpc$/a\### '"$user $exp"'\
 sed -i '/#vmessgrpc$/a\### '"$user $exp"'\
 },{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$user""'"' /etc/xray/config.json
 asu=`cat<<EOF
@@ -306,7 +311,7 @@ echo -e "Network        : ws"
 echo -e "Path           : /vmess"
 echo -e "Path           : /worryfree" 
 echo -e "Path           : http://bug/worryfree" 
-echo -e "Path           : /kuota-habis" 
+echo -e "Path           : /v2ray" 
 echo -e "ServiceName    : vmess-grpc"
 echo -e "\033[0;34m══════════════════════\033[0m"
 echo -e "Link TLS       : ${vmesslink1}"
@@ -326,9 +331,9 @@ function cekws() {
 clear
 echo -n > /tmp/other.txt
 data=( `cat /etc/xray/config.json | grep '###' | cut -d ' ' -f 2 | sort | uniq`);
-echo "-------------------------------";
-echo "-----=[ XRAY User Login ]=-----";
-echo "-------------------------------";
+echo "-------------------------------------";
+echo "-----=[ XRAY Vmess User Login ]=-----";
+echo "-------------------------------------";
 for akun in "${data[@]}"
 do
 if [[ -z "$akun" ]]; then
@@ -408,7 +413,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
     systemctl restart xray > /dev/null 2>&1
     clear
     echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-    echo " XRAY Account Was Successfully Renewed"
+    echo " Vmess Account Was Successfully Renewed"
     echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
     echo ""
     echo " Client Name : $user"
