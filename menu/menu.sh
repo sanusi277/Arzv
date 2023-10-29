@@ -53,8 +53,17 @@ upminutes=`uptime -p | awk '{print $4,$5}' | cut -d , -f1`
 uptimecek=`uptime -p | awk '{print $6,$7}' | cut -d , -f1`
 cekup=`uptime -p | grep -ow "day"`
 jumssh="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
-jumlahxray=$(grep -c -E "^### " "/etc/xray/config.json")
-let jumx=$jumlahxray/2
+jumlahvmess=$(grep -c -E "^### " "/etc/xray/config.json")
+let jumvm=$jumlahvmess/4
+jumlahvless=$(grep -c -E "^## " "/etc/xray/config.json")
+let jumvl=$jumlahvless/2
+jumlahtro=$(grep -c -E "^# " "/etc/xray/config.json")
+let jumtr=$jumlahtro/2
+jumlahssws=$(grep -c -E "^#& " "/etc/xray/config.json")
+let jumssws=$jumlahssws/2
+
+
+
 
 BURIQ () {
     curl -sS https://raw.githubusercontent.com/arzvpn/permission/main/ip > /root/tmp
@@ -192,12 +201,14 @@ echo -e "${BICyan}   │/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/│
 echo -e " ${BICyan}  └─────────────────────────────────────────────────────┘${NC}"
 echo -e "       ${BIBlue} SSH ${NC}: $ressh"" ${BIBlue} NGINX ${NC}: $resngx"" ${BIBlue}  XRAY ${NC}: $resv2r"" ${BIBlue} TROJAN ${NC}: $resv2r"
 echo -e "       ${BIBlue}          DROPBEAR ${NC}: $resdbr" "${BIBlue} SSH-WS ${NC}: $ressshws"
-echo -e "      ${BIWhite}┌────────────────────────────────────────────┐${NC}" 
-echo -e "      ${BIWhite}│                JUMLAH AKUN               $NC"               
-echo -e "      ${BIWhite}│            ${BIRed}SSH              XRAY            $NC" 
-echo -e "      ${BIWhite}│           ${IYellow} $jumssh                $jumx $NC" 
-echo -e "      ${BIWhite}└────────────────────────────────────────────┘${NC}" 
-echo -e "   ┌─────────────────────────────────────────────────────┐" | lolcat
+echo -e "   ${BIWhite}┌───────────────────────────────────────────────────┐${NC}" 
+echo -e "   ${BIWhite}│                     JUMLAH AKUN                      $NC"               
+echo -e "   ${BIWhite}│          ${BIRed}SSH           VMESS          VLESS          $NC" 
+echo -e "   ${BIWhite}│          ${IYellow}$jumssh              $jumvm              $jumvl $NC"
+echo -e "   ${BIWhite}│                ${BIRed}TROJAN          SSWS $NC"
+echo -e "   ${BIWhite}│                ${IYellow}  $jumtr             $jumssws   $NC"    
+echo -e "   ${BIWhite}└────────────────────────────────────────────────────┘${NC}" 
+echo -e "   ┌────────────────────────────────────────────────────┐" | lolcat
 echo -e "        ${BICyan}[${BIGreen}1${BICyan}]${BIGreen} SSH${NC}(${GREEN}menu-ssh${NC})" 
 echo -e "        ${BICyan}[${BIGreen}2${BICyan}]${BIGreen} VMESS${NC}(${GREEN}menu-vmess${NC})"    
 echo -e "        ${BICyan}[${BIGreen}3${BICyan}]${BIGreen} VLESS${NC}(${GREEN}menu-vless${NC})"    
@@ -206,7 +217,8 @@ echo -e "        ${BICyan}[${BIGreen}5${BICyan}]${BIGreen} SHADOWSOCKS${NC}(${GR
 echo -e "        ${BICyan}[${BIGreen}6${BICyan}]${BIGreen} BACKUP/RESTORE${NC}(${GREEN}menu-backup${NC})"    
 echo -e "        ${BICyan}[${BIGreen}7${BICyan}]${BIGreen} SETTINGS${NC}(${GREEN}menu-set${NC})"    
 echo -e "        ${BICyan}[${BIGreen}8${BICyan}]${BIGreen} INFO-SCRIPT${NC}(${GREEN}info${NC})"  
-echo -e "        ${BICyan}[${BIGreen}9${BICyan}]${BIGreen} INFO-SERVER${NC}(${GREEN}infoserv${NC})"    
+echo -e "        ${BICyan}[${BIGreen}9${BICyan}]${BIGreen} INFO-SERVER${NC}(${GREEN}infoserv${NC})"  
+echo -e "        ${BICyan}[${BIGreen}y${BICyan}]${BIGreen} TRIAL ACCOUNTS${NC}(${GREEN}trial${NC})"  
 echo -e "        ${BICyan}[${BIGreen}x${BICyan}]${BIGreen} EXIT MAIN MENU${NC}(${GREEN}exit${NC})"  
 echo -e "   └─────────────────────────────────────────────────────┘" | lolcat
 DATE=$(date +'%d %B %Y')
@@ -241,6 +253,7 @@ case $opt in
 9) clear ; infoserv ;;
 99) clear ; update ;;
 0) clear ; menu ;;
+y) clear ; trial ;;
 x) exit ;;
 *) echo -e "" ; echo "Press any key to back exit" ; sleep 1 ; exit ;;
 esac
