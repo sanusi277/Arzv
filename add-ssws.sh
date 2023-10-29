@@ -113,18 +113,18 @@ fi
 
 tls="$(cat ~/log-install.txt | grep -w "Sodosok WS/GRPC" | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
-echo -e "\033[0;34m┌─────────────────────────────────────────────────┐\033[0m"
-echo -e "\\E[0;41;36m           Create Sodosok Ws/Grpc Account         \E[0m"
-echo -e "\033[0;34m└─────────────────────────────────────────────────┘\033[0m"
+echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "Create Shadowsocks Account        " | lolcat
+echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 
 		read -rp "User: " -e user
 		CLIENT_EXISTS=$(grep -w $user /etc/xray/config.json | wc -l)
 
 		if [[ ${CLIENT_EXISTS} == '1' ]]; then
 clear
-            echo -e "\033[0;34m┌─────────────────────────────────────────────────┐\033[0m"
-            echo -e "\\E[0;41;36m          Create Sodosok Ws/Grpc Account          \E[0m"
-            echo -e "\033[0;34m└─────────────────────────────────────────────────┘\033[0m"
+          echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+          echo -e "Create Shadowsocks Account        " | lolcat
+          echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 			echo ""
 			echo "A client with the specified name was already created, please choose another name."
 			echo ""
@@ -137,9 +137,9 @@ cipher="aes-128-gcm"
 uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "Expired (days): " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
-sed -i '/#ssws$/a\### '"$user $exp"'\
+sed -i '/#ssws$/a\#& '"$user $exp"'\
 },{"password": "'""$uuid""'","method": "'""$cipher""'","email": "'""$user""'"' /etc/xray/config.json
-sed -i '/#ssgrpc$/a\### '"$user $exp"'\
+sed -i '/#ssgrpc$/a\#& '"$user $exp"'\
 },{"password": "'""$uuid""'","method": "'""$cipher""'","email": "'""$user""'"' /etc/xray/config.json
 echo $cipher:$uuid > /tmp/log
 shadowsocks_base64=$(cat /tmp/log)
@@ -375,7 +375,7 @@ END
 systemctl restart xray > /dev/null 2>&1
 service cron restart > /dev/null 2>&1
 clear
-echo -e "${BIBlue}══════XRAY/SSWS═══════${NC}"
+echo -e "${BIBlue}══════-XRAY/SSWS-═══════${NC}"
 echo -e "${BIBlue}════════════════════${NC}"
 echo -e "Remarks      : ${user}" 
 echo -e "Expired On   : $exp"  
