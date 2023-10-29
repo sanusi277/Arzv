@@ -102,109 +102,117 @@ fi
 
 # STATUS SERVICE  SSH 
 if [[ $ssh_service == "running" ]]; then 
-   status_ssh=" ${GREEN}Running ${NC}( No Error )"
+   status_ssh=" ${GREEN}Running ${NC}( No Error )${NC}"
 else
-   status_ssh="${RED}  Not Running ${NC}  ( Error )"
+   status_ssh="${RED}  Not Running ${NC} ( Error )${NC}"
 fi
 
 # STATUS SERVICE  SQUID 
 if [[ $squid_service == "running" ]]; then 
-   status_squid=" ${GREEN}Running ${NC}( No Error )"
+   status_squid=" ${GREEN}Running ${NC}( No Error )${NC}"
 else
-   status_squid="${RED}  Not Running ${NC}  ( Error )"
+   status_squid="${RED}  Not Running ${NC} ( Error )${NC}"
 fi
 
 # STATUS SERVICE  VNSTAT 
 if [[ $vnstat_service == "running" ]]; then 
-   status_vnstat=" ${GREEN}Running ${NC}( No Error )"
+   status_vnstat=" ${GREEN}Running ${NC}( No Error )${NC}"
 else
-   status_vnstat="${RED}  Not Running ${NC}  ( Error )"
+   status_vnstat="${RED}  Not Running ${NC} ( Error )${NC}"
 fi
 
 # STATUS SERVICE  CRONS 
 if [[ $cron_service == "running" ]]; then 
-   status_cron=" ${GREEN}Running ${NC}( No Error )"
+   status_cron=" ${GREEN}Running ${NC}( No Error )${NC}"
 else
-   status_cron="${RED}  Not Running ${NC}  ( Error )"
+   status_cron="${RED}  Not Running ${NC} ( Error )${NC}"
 fi
 
 # STATUS SERVICE  FAIL2BAN 
 if [[ $fail2ban_service == "running" ]]; then 
-   status_fail2ban=" ${GREEN}Running ${NC}( No Error )"
+   status_fail2ban=" ${GREEN}Running ${NC}( No Error )${NC}"
 else
-   status_fail2ban="${RED}  Not Running ${NC}  ( Error )"
+   status_fail2ban="${RED}  Not Running ${NC} ( Error )${NC}"
 fi
 
 # STATUS SERVICE  TLS 
 if [[ $tls_v2ray_status == "running" ]]; then 
-   status_tls_v2ray=" ${GREEN}Running${NC} ( No Error )"
+   status_tls_v2ray=" ${GREEN}Running${NC} ( No Error )${NC}"
 else
-   status_tls_v2ray="${RED}  Not Running${NC}   ( Error )"
+   status_tls_v2ray="${RED}  Not Running${NC}  ( Error )${NC}"
 fi
 
 # STATUS SERVICE NON TLS V2RAY
 if [[ $nontls_v2ray_status == "running" ]]; then 
    status_nontls_v2ray=" ${GREEN}Running ${NC}( No Error )${NC}"
 else
-   status_nontls_v2ray="${RED}  Not Running ${NC}  ( Error )${NC}"
+   status_nontls_v2ray="${RED}  Not Running ${NC} ( Error )${NC}"
 fi
 
 # STATUS SERVICE VLESS HTTPS
 if [[ $vless_tls_v2ray_status == "running" ]]; then
-  status_tls_vless=" ${GREEN}Running${NC} ( No Error )"
+  status_tls_vless=" ${GREEN}Running${NC} ( No Error )${NC}"
 else
-  status_tls_vless="${RED}  Not Running ${NC}  ( Error )${NC}"
+  status_tls_vless="${RED}  Not Running ${NC} ( Error )${NC}"
 fi
 
 # STATUS SERVICE VLESS HTTP
 if [[ $vless_nontls_v2ray_status == "running" ]]; then
-  status_nontls_vless=" ${GREEN}Running${NC} ( No Error )"
+  status_nontls_vless=" ${GREEN}Running${NC} ( No Error )${NC}"
 else
-  status_nontls_vless="${RED}  Not Running ${NC}  ( Error )${NC}"
+  status_nontls_vless="${RED}  Not Running ${NC} ( Error )${NC}"
 fi
 # STATUS SERVICE TROJAN
 if [[ $trojan_server == "running" ]]; then 
    status_virus_trojan=" ${GREEN}Running ${NC}( No Error )${NC}"
 else
-   status_virus_trojan="${RED}  Not Running ${NC}  ( Error )${NC}"
+   status_virus_trojan="${RED}  Not Running ${NC} ( Error )${NC}"
 fi
 # Status Service Trojan GO
 if [[ $strgo == "active" ]]; then
   status_trgo=" ${GREEN}Running ${NC}( No Error )${NC}"
 else
-  status_trgo="${RED}  Not Running ${NC}  ( Error )${NC}"
+  status_trgo="${RED}  Not Running ${NC} ( Error )${NC}"
 fi
 # STATUS SERVICE TROJAN GFW
 if [[ $trojangfw_server == "running" ]]; then 
    status_virus_trojangfw=" ${GREEN}Running ${NC}( No Error )${NC}"
 else
-   status_virus_trojangfw="${RED}  Not Running ${NC}  ( Error )${NC}"
+   status_virus_trojangfw="${RED}  Not Running ${NC} ( Error )${NC}"
 fi
 # STATUS SERVICE DROPBEAR
 if [[ $dropbear_status == "running" ]]; then 
    status_beruangjatuh=" ${GREEN}Running${NC} ( No Error )${NC}"
 else
-   status_beruangjatuh="${RED}  Not Running ${NC}  ( Error )${NC}"
+   status_beruangjatuh="${RED}  Not Running ${NC} ( Error )${NC}"
 fi
 
 # STATUS SERVICE STUNNEL
 if [[ $stunnel_service == "running" ]]; then 
-   status_stunnel=" ${GREEN}Running ${NC}( No Error )"
+   status_stunnel=" ${GREEN}Running ${NC}( No Error )${NC}"
 else
-   status_stunnel="${RED}  Not Running ${NC}  ( Error )}"
+   status_stunnel="${RED}  Not Running ${NC} ( Error )${NC}"
 fi
 # STATUS SERVICE WEBSOCKET TLS
 if [[ $wstls == "running" ]]; then 
    swstls=" ${GREEN}Running ${NC}( No Error )${NC}"
 else
-   swstls="${RED}  Not Running ${NC}  ( Error )${NC}"
+   swstls="${RED}  Not Running ${NC} ( Error )${NC}"
 fi
 
 # STATUS SERVICE WEBSOCKET DROPBEAR
 if [[ $wsdrop == "running" ]]; then 
    swsdrop=" ${GREEN}Running ${NC}( No Error )${NC}"
 else
-   swsdrop="${RED}  Not Running ${NC}  ( Error )${NC}"
+   swsdrop="${RED}  Not Running ${NC} ( Error )${NC}"
+fi
+
+# STATUS NGINX
+ngx=$(service nginx status | grep active | cut -d ' ' $stat)
+if [ "$ngx" = "active" ]; then
+resngx="${green}r]Running ${NC}( No Error )${NC}"
+else
+statsngx="${red}Not Running ${NC}   ( Error )${NC}"
 fi
 
 # TOTAL RAM
@@ -242,6 +250,7 @@ echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━�
 echo -e "                  >>> Service Information <<<                     " | lolcat
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e " SSH / TUNNEL            : Service is $status_ssh"
+echo -e " NGINX                   : Service is $statsngx"
 #echo -e "OpenVPN                 : Service is $status_openvpn"
 echo -e " Dropbear                : Service is $status_beruangjatuh"
 echo -e " Stunnel5                : Service is $status_stunnel"
@@ -256,7 +265,6 @@ echo -e " XRAY Vmess None TLS     : Service is $status_nontls_v2ray"
 echo -e " XRAY Vless TLS          : Service is $status_tls_vless"
 echo -e " XRAY Vless None TLS     : Service is $status_nontls_vless"
 echo -e " XRAY Trojan             : Service is $status_virus_trojan"
-#echo -e " Trojan GFW               :$status_virus_trojangfw"
 echo -e " Websocket TLS           : Service is $swstls"
 echo -e " Websocket None TLS      : Service is $swstls"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
