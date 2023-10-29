@@ -102,7 +102,7 @@ portsshws=`cat /root/log-install.txt | grep -w "SSH Websocket" | cut -d: -f2 | a
 wsssl=`cat /root/log-install.txt | grep -w "SSH SSL Websocket" | cut -d: -f2 | awk '{print $1}'`
 
 echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "\E[0;41;36m        Create SSH Account            \E[0m"
+echo -e "Create SSH Account       " | lolcat   
 echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 read -p "Username : " Login
 read -p "Password : " Pass
@@ -130,7 +130,7 @@ echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
 PID=`ps -ef |grep -v grep | grep sshws |awk '{print $2}'`
 
 if [[ ! -z "${PID}" ]]; then
-echo -e "${BIBlue}═════SSH ACCOUNTS═════${NC}"
+echo -e "${BIBlue}═════-SSH ACCOUNTS-═════${NC}"
 echo -e "${BIBlue}════════════════════${NC}"
 echo -e "Username   : $Login" 
 echo -e "Password   : $Pass"
@@ -156,7 +156,7 @@ echo -e "${BICyan} Enjoy our Arz Auto Script Service${NC}"
 
 else
 
-echo -e "${BIBlue}═════SSH ACCOUNTS═════${NC}"
+echo -e "${BIBlue}═════-SSH ACCOUNTS-═════${NC}"
 echo -e "${BIBlue}════════════════════${NC}"
 echo -e "Username   : $Login" 
 echo -e "Password   : $Pass"
