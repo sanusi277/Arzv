@@ -102,18 +102,17 @@ fi
 tls="$(cat ~/log-install.txt | grep -w "Vmess TLS" | cut -d: -f2|sed 's/ //g')"
 none="$(cat ~/log-install.txt | grep -w "Vmess None TLS" | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
-echo -e "\033[0;34m┌─────────────────────────────────────────────────┐\033[0m"
-echo -e "\\E[0;41;36m            Create Xray/Vmess Account             \E[0m"
-echo -e "\033[0;34m└─────────────────────────────────────────────────┘\033[0m"
-
+echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "Create Vmess Account        " | lolcat
+echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 		read -rp "User: " -e user
 		CLIENT_EXISTS=$(grep -w $user /etc/xray/config.json | wc -l)
 
 		if [[ ${CLIENT_EXISTS} == '1' ]]; then
 clear
-            echo -e "\033[0;34m┌─────────────────────────────────────────────────┐\033[0m"
-            echo -e "\\E[0;41;36m            Create Xray/Vmess Account             \E[0m"
-            echo -e "\033[0;34m└─────────────────────────────────────────────────┘\033[0m"
+           echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+           echo -e "Create Vmess Account        " | lolcat
+           echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 			echo ""
 			echo "A client with the specified name was already created, please choose another name."
 			echo ""
@@ -189,7 +188,7 @@ vmesslink3="vmess://$(echo $grpc | base64 -w 0)"
 systemctl restart xray > /dev/null 2>&1
 service cron restart > /dev/null 2>&1
 clear
-echo -e "${BIBlue}═════XRAY/VMESS═════${NC}"
+echo -e "${BIBlue}═════-XRAY/VMESS-═════${NC}"
 echo -e "${BIBlue}═══════════════════${NC}"
 echo -e "Remarks       : ${user}"
 echo -e "Expired On    : $exp" 
@@ -204,7 +203,7 @@ echo -e "Network       : ws"
 echo -e "Path          : /vmess" 
 echo -e "Path          : /worryfree" 
 echo -e "Path          : http://bug/worryfree" 
-echo -e "Path          : /kuota-habis" 
+echo -e "Path          : /v2ray" 
 echo -e "ServiceName   : vmess-grpc" 
 echo -e "${BIBlue}═══════════════════${NC}" 
 echo -e "Link TLS : "
