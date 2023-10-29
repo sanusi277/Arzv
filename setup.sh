@@ -111,7 +111,7 @@ mkdir -p /etc/xray
 
 echo -e "${tyblue} Welcome To Arz AutoScript......${NC} "
 sleep 2
-echo -e " >>>Owner Arz Vpn Store<<<"  | lolcat
+echo -e "${tyblue} >>>Owner Arz Vpn Store<<<${NC}"  
 echo -e "[ ${green}INFO${NC} ] Preparing the install file"
 apt install git curl -y >/dev/null 2>&1
 echo -e "[ ${green}INFO${NC} ] installation file is ready"
@@ -195,10 +195,10 @@ clear;clear;clear
 
 # // Starting Setup Domain
 echo -e "${YELLOW}-----------------------------------------------------${NC}"
-echo -e "Anda Ingin Menggunakan Domain Pribadi ?"
-echo -e "Atau Ingin Menggunakan Domain Otomatis ?"
-echo -e "Jika Ingin Menggunakan Domain Pribadi, Ketik ${GREEN}1${NC}"
-echo -e "dan Jika Ingin menggunakan Domain Otomatis, Ketik ${GREEN}2${NC}"
+echo -e "1. Gunakan Domain Pribadi"
+echo -e "2. Gunakan Domain Otomatis/Bawaan SC"
+echo -e ""
+echo -e "Jika tak ada domain pribadi maka disarankan memakai domain otomatis"
 echo -e "${YELLOW}-----------------------------------------------------${NC}"
 echo ""
 
@@ -227,8 +227,8 @@ mkdir -p /usr/local/etc/xray
 
 # // String / Request Data
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c4)
-DOMAIN=multiarz.tech
-SUB_DOMAIN=${sub}.multiarz.tech
+DOMAIN=aioscarz.tech
+SUB_DOMAIN=${sub}.aioscarz.tech
 CF_ID=arzstore22@gmail.com
 CF_KEY=8772ff286d8515ccb36caf0f0f69b2fde1831
 set -euo pipefail
@@ -296,9 +296,9 @@ clear;clear;clear
 
 echo -e "${GREEN}Indonesian Language${NC}"
 echo -e "${YELLOW}-----------------------------------------------------${NC}"
-echo -e "Silakan Pointing Domain Anda Ke IP VPS"
-echo -e "Untuk Caranya Arahkan NS Domain Ke Cloudflare"
-echo -e "Kemudian Tambahkan A Record Dengan IP VPS"
+echo -e "Pastikan Sudah Pointing Domain Anda Ke IP VPS"
+echo -e "Pastikan Benar Saat Memasukkan Domainnya"
+echo -e "Agar Menghindari Error Setelahnya"
 echo -e "${YELLOW}-----------------------------------------------------${NC}"
 echo ""
 echo ""
@@ -501,7 +501,7 @@ echo "Log All Account " > /etc/log-create-user.log
 fi
 history -c
 serverV=$( curl -sS https://raw.githubusercontent.com/arzvpn/Arzv/main/version  )
-echo $serverV > /opt/.ver
+echo $serverV > /home/ver
 aureb=$(cat /home/re_otm)
 b=11
 if [ $aureb -gt $b ]
@@ -565,5 +565,5 @@ rm -fr /root/setup.sh
 rm -fr /root/domain
 history -c
 sleep 3
-
+echo -e " INSTALL UDP CUSTOM" | lolcat
 wget -q https://raw.githubusercontent.com/arzvpn/Arzv/main/upudparz.sh && chmod +x upudparz.sh && ./upudparz.sh
