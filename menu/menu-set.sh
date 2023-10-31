@@ -102,21 +102,25 @@ clear
 echo -e "┌─────────────────────────────────────────────────┐" | lolcat
 echo -e "│                  MENU SETTINGS                  │" | lolcat
 echo -e "└─────────────────────────────────────────────────┘" | lolcat
-echo -e " ┌───────────────────────────────────────────────┐" | lolcat
+echo -e ""
+echo -e " ─────────────Settings Vps─────────────" | lolcat
 echo -e "   ${BICyan}[${BIGreen}1${BICyan}]${BIGreen}  ADD Host/Domain${NC}(${GREEN}addhost${NC})"
 echo -e "   ${BICyan}[${BIGreen}2${BICyan}]${BIGreen}  Renew CertXRAY${NC}(${GREEN}certxray${NC})"
-echo -e "   ${BICyan}[${BIGreen}3${BICyan}]${BIGreen}  Check Running${NC}(${GREEN}running${NC})"
-echo -e "   ${BICyan}[${BIGreen}4${BICyan}]${BIGreen}  Change Banner SSH${NC} "
-echo -e "   ${BICyan}[${BIGreen}5${BICyan}]${BIGreen}  Info-Bandwidth${NC}(${GREEN}cek-bandwidth${NC})"
-echo -e "   ${BICyan}[${BIGreen}6${BICyan}]${BIGreen}  Restart${NC}(${GREEN}restart${NC}) "
-echo -e "   ${BICyan}[${BIGreen}7${BICyan}]${BIGreen}  Auto Reboot${NC}(${GREEN}autoreboot${NC})"
-echo -e "   ${BICyan}[${BIGreen}8${BICyan}]${BIGreen}  Reboot${NC}(${GREEN}reboot${NC})"
-echo -e "   ${BICyan}[${BIGreen}9${BICyan}]${BIGreen}  SpeedTest${NC}(${GREEN}speedtest${NC})"
-echo -e "   ${BICyan}[${BIGreen}10${BICyan}]${BIGreen} Limit Speed${NC}(${GREEN}limitspeed${NC})"
-echo -e "   ${BICyan}[${BIGreen}11${BICyan}]${BIGreen} Webmin${NC}(${GREEN}webmin${NC})"
-echo -e "   ${BICyan}[${BIGreen}12${BICyan}]${BIGreen} UPDATE SCRIPT${NC}(${GREEN}update${NC})"
-echo -e "   ${BICyan}[${BIGreen}13${BICyan}]${BIGreen} Tendang User Mullog${NC}(${GREEN}tendang${NC})"
-echo -e "   ${BICyan}[${BIGreen}14${BICyan}]${BIGreen} About SCRIPT${NC}(${GREEN}about${NC})"
+echo -e "   ${BICyan}[${BIGreen}3${BICyan}]${BIGreen}  Change Password Vps${NC}(${GREEN}changepw${NC})"
+echo -e ""
+echo -e " ───────────Settings Scripts───────────" | lolcat
+echo -e "   ${BICyan}[${BIGreen}4${BICyan}]${BIGreen}  Check Running${NC}(${GREEN}running${NC})"
+echo -e "   ${BICyan}[${BIGreen}5${BICyan}]${BIGreen}  Change Banner SSH${NC} "
+echo -e "   ${BICyan}[${BIGreen}6${BICyan}]${BIGreen}  Info-Bandwidth${NC}(${GREEN}cek-bandwidth${NC})"
+echo -e "   ${BICyan}[${BIGreen}7${BICyan}]${BIGreen}  Restart${NC}(${GREEN}restart${NC}) "
+echo -e "   ${BICyan}[${BIGreen}8${BICyan}]${BIGreen}  Auto Reboot${NC}(${GREEN}autoreboot${NC})"
+echo -e "   ${BICyan}[${BIGreen}9${BICyan}]${BIGreen}  Reboot${NC}(${GREEN}reboot${NC})"
+echo -e "   ${BICyan}[${BIGreen}10${BICyan}]${BIGreen} SpeedTest${NC}(${GREEN}speedtest${NC})"
+echo -e "   ${BICyan}[${BIGreen}11${BICyan}]${BIGreen} Limit Speed${NC}(${GREEN}limitspeed${NC})"
+echo -e "   ${BICyan}[${BIGreen}12${BICyan}]${BIGreen} Webmin${NC}(${GREEN}webmin${NC})"
+echo -e "   ${BICyan}[${BIGreen}13${BICyan}]${BIGreen} UPDATE SCRIPT${NC}(${GREEN}update${NC})"
+echo -e "   ${BICyan}[${BIGreen}14${BICyan}]${BIGreen} Tendang User Mullog${NC}(${GREEN}tendang${NC})"
+echo -e "   ${BICyan}[${BIGreen}15${BICyan}]${BIGreen} About Script${NC}(${GREEN}about${NC})"
 echo -e "   ${BICyan}[${BIGreen}0${BICyan}]${BIGreen}  Back To Menu${NC}"
 echo -e "   ${BICyan}[${BIGreen}x${BICyan}]${BIGreen}  Exit${NC}"
 echo -e " └───────────────────────────────────────────────┘" | lolcat
@@ -126,18 +130,19 @@ echo -e   ""
 case $opt in
 01 | 1) clear ; addhost ;;
 02 | 2) clear ; certxray ;;
-03 | 3) clear ; running ;;
-04 | 4) clear ; nano /etc/issue.net ;;
-05 | 5) clear ; cek-bandwidth ;;
-06 | 6) clear ; restart ;;
-07 | 7) clear ; autoreboot ;;
-08 | 8) clear ; reboot ;;
-09 | 9) clear ; speedtest ;;
-10 | 10) clear ; limitspeed ;;
-11 | 11) clear ; webmin ;;
-12 | 12) clear ; update ;;
-13 | 13) clear ; tendang ;;
-14 | 14) clear ; about ;;
+03 | 3) clear ; changepw ;;
+04 | 4) clear ; running ;;
+05 | 5) clear ; nano /etc/issue.net ;;
+06 | 6) clear ; cek-bandwidth ;;
+07 | 7) clear ; restart ;;
+08 | 8) clear ; autoreboot ;;
+09 | 9) clear ; reboot ;;
+10 | 10) clear ; speedtest ;;
+11 | 11) clear ; limitspeed ;;
+12 | 12) clear ; webmin ;;
+13 | 13) clear ; update ;;
+14 | 14) clear ; tendang ;;
+15 | 15) clear ; about ;;
 00 | 0) clear ; menu ;;
 x) exit ;;
 *) clear ; menu-set ;;
