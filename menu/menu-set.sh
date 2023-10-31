@@ -123,7 +123,7 @@ echo -e "   ${BICyan}[${BIGreen}14${BICyan}]${BIGreen} Tendang User Mullog${NC}(
 echo -e "   ${BICyan}[${BIGreen}15${BICyan}]${BIGreen} About Script${NC}(${GREEN}about${NC})"
 echo -e "   ${BICyan}[${BIGreen}0${BICyan}]${BIGreen}  Back To Menu${NC}"
 echo -e "   ${BICyan}[${BIGreen}x${BICyan}]${BIGreen}  Exit${NC}"
-echo -e " └───────────────────────────────────────────────┘" | lolcat
+echo -e " ──────────────────────────────────────" | lolcat
 echo -e ""
 read -p "  Select menu :  "  opt
 echo -e   ""
