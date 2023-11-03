@@ -451,6 +451,7 @@ chmod +x /usr/bin/info
 chmod +x /usr/bin/infoserv
 chmod +x /usr/bin/about
 wget -q -O /usr/bin/changepw "https://raw.githubusercontent.com/arzvpn/Arzv/main/options/changepw.sh"chmod +x /usr/bin/changepw
+wget -q -O /usr/bin/trial "https://raw.githubusercontent.com/arzvpn/Arzv/main/menu/trial.sh"chmod +x /usr/bin/trial
 
 #cat > /etc/cron.d/re_otm <<-END
 #SHELL=/bin/sh
