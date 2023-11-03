@@ -110,7 +110,7 @@ MYIP=$(wget -qO- ipv4.icanhazip.com);
 NUMBER_OF_CLIENTS=$(grep -c -E "^## " "/etc/xray/config.json")
         if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
                 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-                echo -e "\\E[0;41;36m     Check Detail XRAY Vless     \E[0m"
+                echo -e "      Check Detail XRAY Vless     " | lolcat
                 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
                 echo ""
                 echo "You have no existing clients!"
@@ -119,7 +119,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^## " "/etc/xray/config.json")
         fi
 
         echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-        echo -e "\\E[0;41;36m     Check Detail XRAY Vless     \E[0m"
+        echo -e "      Check Detail XRAY Vless     " | lolcat
         echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
         echo " Select the existing client to view the config"
         echo " Press CTRL+C to return"
@@ -216,9 +216,9 @@ function cekws() {
 clear
 echo -n > /tmp/other.txt
 data=( `cat /etc/xray/config.json | grep '##' | cut -d ' ' -f 2 | sort | uniq`);
-echo "-----------------------------------------";
-echo "-------=[ XRAY Vless User Login ]=-------";
-echo "-----------------------------------------";
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "       CHECK LOGIN XRAY VLESS       " | lolcat
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 for akun in "${data[@]}"
 do
 if [[ -z "$akun" ]]; then
@@ -246,7 +246,7 @@ lastlogin=$(cat /var/log/xray/access.log | grep -w "$akun" | tail -n 500 | cut -
 echo -e "user :${GREEN} ${akun} ${NC}
 ${RED}Online Jam ${NC}: ${lastlogin} wib";
 echo -e "$jum2";
-echo "-------------------------------"
+echo "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 fi
 rm -rf /tmp/ipxray.txt
 done
@@ -262,7 +262,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^## " "/etc/xray/config.json")
 	if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
 		clear
         echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-        echo -e "\\E[0;41;36m            Renew Vless            \E[0m"
+        echo -e "            Renew Vless            " | lolcat
         echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 		echo ""
 		echo "You have no existing clients!"
@@ -275,7 +275,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^## " "/etc/xray/config.json")
 
 	clear
 	echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-    echo -e "\\E[0;41;36m            Renew Vless            \E[0m"
+    echo -e "            Renew Vless            " | lolcat
     echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
     echo ""
   	grep -E "^## " "/etc/xray/config.json" | cut -d ' ' -f 2-3 | column -t | sort | uniq
@@ -298,7 +298,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^## " "/etc/xray/config.json")
     systemctl restart xray > /dev/null 2>&1
     clear
     echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-    echo " Vless Account Was Successfully Renewed"
+    echo " Vless Account Was Successfully Renewed" | lolcat
     echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
     echo ""
     echo " Client Name : $user"
@@ -315,7 +315,7 @@ clear
 NUMBER_OF_CLIENTS=$(grep -c -E "^## " "/etc/xray/config.json")
 	if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
 		echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-        echo -e "\\E[0;41;36m      Delete XRAY Vless  Account     \E[0m"
+        echo -e "      Delete XRAY Vless  Account     " | lolcat
         echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 		echo ""
 		echo "You have no existing clients!"
@@ -327,7 +327,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^## " "/etc/xray/config.json")
 
 	clear
 	echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-    echo -e "\\E[0;41;36m     Delete XRAY Vless Account     \E[0m"
+    echo -e "     Delete XRAY Vless Account     " | lolcat
     echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
     echo "  User       Expired  " 
 	echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
@@ -344,7 +344,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^## " "/etc/xray/config.json")
     systemctl restart xray > /dev/null 2>&1
     clear
     echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-    echo " Vless Account Deleted Successfully"
+    echo " Vless Account Deleted Successfully" | lolcat
     echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
     echo " Client Name : $user"
     echo " Expired On  : $exp"
