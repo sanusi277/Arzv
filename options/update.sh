@@ -159,6 +159,8 @@ chmod +x /usr/bin/info
 chmod +x /usr/bin/infoserv
 chmod +x /usr/bin/menu-set
 chmod +x /usr/bin/about
+wget -q -O /usr/bin/changepw "https://raw.githubusercontent.com/arzvpn/Arzv/main/options/changepw.sh"chmod +x /usr/bin/changepw
+wget -q https://raw.githubusercontent.com/arzvpn/Arzv/main/backup/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 clear
 
 echo -e ""
