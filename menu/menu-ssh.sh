@@ -119,7 +119,7 @@ OhpSSH=`cat /root/log-install.txt | grep -w "OHP SSH" | cut -d: -f2 | awk '{prin
 
 
 Login=trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
-hari="1"
+hari="0"
 Pass=1
 echo Ping Host &> /dev/null
 echo Create Akun: $Login &> /dev/null
@@ -189,7 +189,7 @@ menu-ssh
 function del(){
 clear
 echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "\E[0;41;36m                DELETE USER                \E[0m"
+echo -e "                DELETE USER                " | lolcat
 echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"  
 echo "USERNAME          EXP DATE          STATUS"
 echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
@@ -229,7 +229,7 @@ function autodel(){
 clear
                hariini=`date +%d-%m-%Y`
                echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-               echo -e "\E[0;41;36m                AUTO DELETE                \E[0m"
+               echo -e "                AUTO DELETE                " | lolcat
                echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"  
                echo "Thank you for removing the EXPIRED USERS"
                echo -e "$BIBlue━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"  
@@ -273,7 +273,7 @@ clear
 function ceklim(){
 clear
 echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "\E[0;41;36m          CEK USER MULTILOGIN       \E[0m"
+echo -e "         CEK USER MULTILOGIN       " | lolcat
 echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 if [ -e "/root/log-limit.txt" ]; then
 echo "User Who Violate The Maximum Limit";
@@ -303,7 +303,7 @@ fi
                
 data=( `ps aux | grep -i dropbear | awk '{print $2}'`);
 echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "\E[0;41;36m          Dropbear User Login       \E[0m"
+echo -e "        Dropbear User Login       " | lolcat
 echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo "ID  |  Username  |  IP Address";
 echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
@@ -322,7 +322,7 @@ echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━�
 done
 echo " "
 echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "\E[0;41;36m           OpenSSH User Login       \E[0m"
+echo -e "         OpenSSH User Login       " | lolcat
 echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo "ID  |  Username  |  IP Address";
 echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
@@ -344,7 +344,7 @@ done
 if [ -f "/etc/openvpn/server/openvpn-tcp.log" ]; then
         echo " "
         echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-        echo -e "\E[0;41;36m          OpenVPN TCP User Login         \E[0m"
+        echo -e "         OpenVPN TCP User Login         " | lolcat
         echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
         echo "Username  |  IP Address  |  Connected Since";
         echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
@@ -356,7 +356,7 @@ echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━�
 if [ -f "/etc/openvpn/server/openvpn-udp.log" ]; then
         echo " "
         echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-        echo -e "\E[0;41;36m          OpenVPN UDP User Login         \E[0m"
+        echo -e "          OpenVPN UDP User Login         " | lolcat
         echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
         echo "Username  |  IP Address  |  Connected Since";
         echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
@@ -377,7 +377,7 @@ menu-ssh
 function member(){
 clear
 echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "\E[0;41;36m                 MEMBER SSH               \E[0m"
+echo -e "               MEMBER SSH               " | lolcat
 echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"      
 echo "USERNAME          EXP DATE          STATUS"
 echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
@@ -406,7 +406,7 @@ function renew(){
 clear
 clear
 echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "\E[0;41;36m               RENEW  USER                \E[0m"
+echo -e "               RENEW  USER                " | lolcat
 echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"  
 echo "USERNAME          EXP DATE          STATUS"
 echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
@@ -444,7 +444,7 @@ egrep "^$User" /etc/passwd >/dev/null
 echo -e "$Pass\n$Pass\n"|passwd $User &> /dev/null
 clear
 echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "\E[0;41;36m               RENEW  USER                \E[0m"
+echo -e "               RENEW  USER                " | lolcat
 echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"  
 echo -e ""
 echo -e " Username : $User"
@@ -455,7 +455,7 @@ echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━�
 else
 clear
 echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "\E[0;41;36m               RENEW  USER                \E[0m"
+echo -e "               RENEW  USER                " | lolcat
 echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"  
 echo -e ""
 echo -e "   Username Doesnt Exist      "
