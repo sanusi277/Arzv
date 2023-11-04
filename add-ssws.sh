@@ -114,7 +114,7 @@ fi
 tls="$(cat ~/log-install.txt | grep -w "Sodosok WS/GRPC" | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "Create Shadowsocks Account        " | lolcat
+echo -e "     Create Shadowsocks Account        " | lolcat
 echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 
 		read -rp "User: " -e user
@@ -123,7 +123,7 @@ echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━�
 		if [[ ${CLIENT_EXISTS} == '1' ]]; then
 clear
           echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-          echo -e "Create Shadowsocks Account        " | lolcat
+          echo -e "     Create Shadowsocks Account        " | lolcat
           echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 			echo ""
 			echo "A client with the specified name was already created, please choose another name."
