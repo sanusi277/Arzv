@@ -103,7 +103,7 @@ fi
 tr="$(cat ~/log-install.txt | grep -w "Trojan WS " | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
 echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "Create Trojan Account        " | lolcat
+echo -e "       Create Trojan Account        " | lolcat
 echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 
 		read -rp "User: " -e user
@@ -112,7 +112,7 @@ echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━�
 		if [[ ${user_EXISTS} == '1' ]]; then
 clear
 		echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-                echo -e "Create Trojan Account        " | lolcat
+                echo -e "       Create Trojan Account        " | lolcat
                 echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 			echo ""
 			echo "A client with the specified name was already created, please choose another name."
