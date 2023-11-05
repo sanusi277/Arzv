@@ -206,7 +206,7 @@ echo -e "   ${BIWhite}│                     JUMLAH AKUN                      $
 echo -e "   ${BIWhite}│          ${BIRed}SSH           VMESS          VLESS          $NC" 
 echo -e "   ${BIWhite}│          ${IYellow}$jumssh              $jumvm              $jumvl $NC"
 echo -e "   ${BIWhite}│                ${BIRed}TROJAN          SSWS $NC"
-echo -e "   ${BIWhite}│                ${IYellow}  $jumtr             $jumssws   $NC"    
+echo -e "   ${BIWhite}│                ${IYellow}  $jumtr              $jumssws   $NC"    
 echo -e "   ${BIWhite}└────────────────────────────────────────────────────┘${NC}" 
 echo -e "   ┌────────────────────────────────────────────────────┐" | lolcat
 echo -e "        ${BICyan}[${BIGreen}1${BICyan}]${BIGreen} SSH${NC}(${GREEN}menu-ssh${NC})" 
