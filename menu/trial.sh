@@ -410,14 +410,14 @@ clear
 echo -e "┌────────────────────────────────────────────┐" | lolcat
 echo -e "│                 TRIAL MENU                 │" | lolcat
 echo -e "└────────────────────────────────────────────┘" | lolcat
-echo -e " ┌───────────────────────────────────────────────┐" | lolcat
+echo -e " ┌────────────────────────────────────────────┐" | lolcat
 echo -e "     ${BICyan}[${BIGreen}a${BICyan}]${BIGreen} Trial SSH Account   ${NC}   "
 echo -e "     ${BICyan}[${BIGreen}b${BICyan}]${BIGreen} Trial Vmess Account   ${NC}   "
 echo -e "     ${BICyan}[${BIGreen}c${BICyan}]${BIGreen} Trial Vless Account   ${NC}   "
 echo -e "     ${BICyan}[${BIGreen}d${BICyan}]${BIGreen} Trial Trojan Account   ${NC}   "
 echo -e "     ${BICyan}[${BIGreen}e${BICyan}]${BIGreen} Trial Shadowsocks Account  ${NC}    "
 echo -e "     ${BICyan}[${BIGreen}x${BICyan}]${BIGreen} Exit Menu  ${NC} "
-echo -e " └───────────────────────────────────────────────┘" | lolcat
+echo -e " └────────────────────────────────────────────┘" | lolcat
 echo ""
 read -p " Select menu : " opt
 echo -e ""
