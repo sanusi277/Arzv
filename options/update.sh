@@ -49,7 +49,7 @@ export UNDERLINE="\e[4m"
 
 
 #wget https://github.com/${GitUser}/
-GitUser="arzvpn"
+GitUser="sanusi277"
 if [ "${EUID}" -ne 0 ]; then
 		echo "You need to run this script as root"
 		exit 1
@@ -149,36 +149,34 @@ echo ""
 echo -e "\e[0;32mNew Version Downloading started!\e[0m"
 sleep 2
 cd /usr/bin
-wget -q -O /usr/bin/add-ws "https://raw.githubusercontent.com/arzvpn/Arzv/main/add-ws.sh"
-wget -q -O /usr/bin/add-ssws "https://raw.githubusercontent.com/arzvpn/Arzv/main/add-ssws.sh"
-wget -q -O /usr/bin/add-vless "https://raw.githubusercontent.com/arzvpn/Arzv/main/add-vless.sh"
-wget -q -O /usr/bin/add-tr "https://raw.githubusercontent.com/arzvpn/Arzv/main/add-tr.sh"
-wget -q -O /usr/bin/usernew "https://raw.githubusercontent.com/arzvpn/Arzv/main/usernew.sh"
-wget -q -O /usr/bin/autoreboot "https://raw.githubusercontent.com/arzvpn/Arzv/main/options/autoreboot.sh"
-wget -q -O /usr/bin/restart "https://raw.githubusercontent.com/arzvpn/Arzv/main/options/restart.sh"
-wget -q -O /usr/bin/tendang "https://raw.githubusercontent.com/arzvpn/Arzv/main/options/tendang.sh"
-wget -q -O /usr/bin/clearlog "https://raw.githubusercontent.com/arzvpn/Arzv/main/options/clearlog.sh"
-wget -q -O /usr/bin/running "https://raw.githubusercontent.com/arzvpn/Arzv/main/options/running.sh"
+wget -q -O /usr/bin/add-ws "https://raw.githubusercontent.com/sanusi277/Arzv/main/add-ws.sh"
+wget -q -O /usr/bin/add-ssws "https://raw.githubusercontent.com/sanusi277/Arzv/main/add-ssws.sh"
+wget -q -O /usr/bin/add-vless "https://raw.githubusercontent.com/sanusi277/Arzv/main/add-vless.sh"
+wget -q -O /usr/bin/add-tr "https://raw.githubusercontent.com/sanusi277/Arzv/main/add-tr.sh"
+wget -q -O /usr/bin/usernew "https://raw.githubusercontent.com/sanusi277/Arzv/main/usernew.sh"
+wget -q -O /usr/bin/autoreboot "https://raw.githubusercontent.com/sanusi277/Arzv/main/options/autoreboot.sh"
+wget -q -O /usr/bin/restart "https://raw.githubusercontent.com/sanusi277/Arzv/main/options/restart.sh"
+wget -q -O /usr/bin/tendang "https://raw.githubusercontent.com/sanusi277/Arzv/main/options/tendang.sh"
+wget -q -O /usr/bin/clearlog "https://raw.githubusercontent.com/sanusi277/Arzv/main/options/clearlog.sh"
+wget -q -O /usr/bin/running "https://raw.githubusercontent.com/sanusi277/Arzv/main/options/running.sh"
 #wget -q -O /usr/bin/cek-trafik "https://raw.githubusercontent.com/arzvpn/Arzv2/main/options/cek-trafik.sh"
-wget -q -O /usr/bin/cek-bandwidth "https://raw.githubusercontent.com/arzvpn/Arzv/main/options/cek-bandwidth.sh"
-wget -q -O /usr/bin/limitspeed "https://raw.githubusercontent.com/arzvpn/Arzv/main/options/limitspeed.sh"
-wget -q -O /usr/bin/menu-vless "https://raw.githubusercontent.com/arzvpn/Arzv/main/menu/menu-vless.sh"
-wget -q -O /usr/bin/menu-vmess "https://raw.githubusercontent.com/arzvpn/Arzv/main/menu/menu-vmess.sh"
-wget -q -O /usr/bin/menu-ss "https://raw.githubusercontent.com/arzvpn/Arzv/main/menu/menu-ss.sh"
-wget -q -O /usr/bin/menu-trojan "https://raw.githubusercontent.com/arzvpn/Arzv/main/menu/menu-trojan.sh"
-wget -q -O /usr/bin/menu-ssh "https://raw.githubusercontent.com/arzvpn/Arzv/main/menu/menu-ssh.sh"
-wget -q -O /usr/bin/menu-backup "https://raw.githubusercontent.com/arzvpn/Arzv/main/menu/menu-backup.sh"
-wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/arzvpn/Arzv/main/menu/menu.sh"
-wget -q -O /usr/bin/webmin "https://raw.githubusercontent.com/arzvpn/Arzv/main/options/webmin.sh"
-wget -q -O /usr/bin/xp "https://raw.githubusercontent.com/arzvpn/Arzv/main/xp.sh"
-wget -q -O /usr/bin/update "https://raw.githubusercontent.com/arzvpn/Arzv/main/options/update.sh"
-#wget -q -O /usr/bin/menu-theme "https://raw.githubusercontent.com/arzvpn/Arzv/main/menu/menu-theme.sh"
-wget -q -O /usr/bin/info "https://raw.githubusercontent.com/arzvpn/Arzv/main/options/info.sh"
-wget -q -O /usr/bin/infoserv "https://raw.githubusercontent.com/arzvpn/Arzv/main/options/infoserv.sh"
-wget -q -O /usr/bin/menu-set "https://raw.githubusercontent.com/arzvpn/Arzv/main/menu/menu-set.sh"
+wget -q -O /usr/bin/cek-bandwidth "https://raw.githubusercontent.com/sanusi277/Arzv/main/options/cek-bandwidth.sh"
+wget -q -O /usr/bin/limitspeed "https://raw.githubusercontent.com/sanusi277/Arzv/main/options/limitspeed.sh"
+wget -q -O /usr/bin/menu-vless "https://raw.githubusercontent.com/sanusi277/Arzv/main/menu/menu-vless.sh"
+wget -q -O /usr/bin/menu-vmess "https://raw.githubusercontent.com/sanusi277/Arzv/main/menu/menu-vmess.sh"
+wget -q -O /usr/bin/menu-ss "https://raw.githubusercontent.com/sanusi277/Arzv/main/menu/menu-ss.sh"
+wget -q -O /usr/bin/menu-trojan "https://raw.githubusercontent.com/sanusi277/Arzv/main/menu/menu-trojan.sh"
+wget -q -O /usr/bin/menu-ssh "https://raw.githubusercontent.com/sanusi277/Arzv/main/menu/menu-ssh.sh"
+wget -q -O /usr/bin/menu-backup "https://raw.githubusercontent.com/sanusi277/Arzv/main/menu/menu-backup.sh"
+wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/sanusi277/Arzv/main/menu/menu.sh"
+wget -q -O /usr/bin/webmin "https://raw.githubusercontent.com/sanusi277/Arzv/main/options/webmin.sh"
+wget -q -O /usr/bin/xp "https://raw.githubusercontent.com/sanusi277/Arzv/main/xp.sh"
+wget -q -O /usr/bin/info "https://raw.githubusercontent.com/sanusi277/Arzv/main/options/info.sh"
+wget -q -O /usr/bin/infoserv "https://raw.githubusercontent.com/sanusi277/Arzv/main/options/infoserv.sh"
+wget -q -O /usr/bin/menu-set "https://raw.githubusercontent.com/sanusi277/Arzv/main/menu/menu-set.sh"
 wget -q -O /usr/bin/about "https://raw.githubusercontent.com/arzvpn/Arzv/main/options/about.sh"
-wget -q -O /usr/bin/changepw "https://raw.githubusercontent.com/arzvpn/Arzv/main/options/changepw.sh"
-wget -q -O /usr/bin/trial "https://raw.githubusercontent.com/arzvpn/Arzv/main/menu/trial.sh"
+wget -q -O /usr/bin/changepw "https://raw.githubusercontent.com/sanusi277/Arzv/main/options/changepw.sh"
+wget -q -O /usr/bin/trial "https://raw.githubusercontent.com/sanusi277/Arzv/main/menu/trial.sh"
 chmod +x /usr/bin/add-ws
 chmod +x /usr/bin/add-ssws
 chmod +x /usr/bin/add-vless
@@ -210,7 +208,7 @@ chmod +x /usr/bin/menu-set
 chmod +x /usr/bin/about
 chmod +x /usr/bin/changepw
 chmod +x /usr/bin/trial
-wget -q https://raw.githubusercontent.com/arzvpn/Arzv/main/backup/set-br.sh && chmod +x set-br.sh && ./set-br.sh
+wget -q https://raw.githubusercontent.com/sanusi277/Arzv/main/backup/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 clear
 
 echo -e ""
