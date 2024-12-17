@@ -52,7 +52,7 @@ export WARNING="${RED}\e[5m"
 export UNDERLINE="\e[4m"
 
 BURIQ () {
-    curl -sS https://raw.githubusercontent.com/arzvpn/permission/main/ip > /root/tmp
+    curl -sS https://raw.githubusercontent.com/sanusi277/permission/main/ip > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
     for user in "${data[@]}"
     do
@@ -70,7 +70,7 @@ BURIQ () {
 }
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS https://raw.githubusercontent.com/arzvpn/permission/main/ip | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/sanusi277/permission/main/ip | grep $MYIP | awk '{print $2}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -87,7 +87,7 @@ fi
 
 PERMISSION () {
     MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/arzvpn/permission/main/ip | awk '{print $4}' | grep $MYIP)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/sanusi277/permission/main/ip | awk '{print $4}' | grep $MYIP)
     if [ "$MYIP" = "$IZIN" ]; then
     Bloman
     else
@@ -128,14 +128,14 @@ commonname=ArzVpn
 email=admin@arzvip.site
 
 # simple password minimal
-wget -q -O /etc/pam.d/common-password "https://raw.githubusercontent.com/arzvpn/Arzv/main/tools/password"
+wget -q -O /etc/pam.d/common-password "https://raw.githubusercontent.com/sanusi277/Arzv/main/tools/password"
 chmod +x /etc/pam.d/common-password
 
 # go to root
 cd
 
 # Getting websocket dropbear
-wget -q -O /usr/local/bin/ws-dropbear "https://raw.githubusercontent.com/arzvpn/Arzv/main/tools/ws-dropbear"
+wget -q -O /usr/local/bin/ws-dropbear "https://raw.githubusercontent.com/sanusi277/Arzv/main/tools/ws-dropbear"
 chmod +x /usr/local/bin/ws-dropbear
 
 # Installing Service
@@ -166,7 +166,7 @@ systemctl restart ws-dropbear >/dev/null 2>&1
 clear 
 
 # Getting websocket ssl stunnel
-wget -q -O /usr/local/bin/ws-stunnel "https://raw.githubusercontent.com/arzvpn/Arzv/main/tools/ws-stunnel"
+wget -q -O /usr/local/bin/ws-stunnel "https://raw.githubusercontent.com/sanusi277/Arzv/main/tools/ws-stunnel"
 chmod +x /usr/local/bin/ws-stunnel
 
 # Installing Service Ovpn Websocket
@@ -497,7 +497,7 @@ rm -fr /etc/issue.net
 rm -fr /etc/issue.net.save
 sleep 1
 echo -e "[ ${green}INFO$NC ] Settings banner"
-wget -q -O /etc/issue.net "https://raw.githubusercontent.com/arzvpn/Arzv/main/issue.net"
+wget -q -O /etc/issue.net "https://raw.githubusercontent.com/sanusi277/Arzv/main/issue.net"
 chmod +x /etc/issue.net
 echo "Banner /etc/issue.net" >> /etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
